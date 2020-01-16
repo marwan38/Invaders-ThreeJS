@@ -21,7 +21,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "three": "^0.107.0",
+    "three": "^0.112.1",
     "three-orbit-controls": "^82.1.0"
   }
 }

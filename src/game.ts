@@ -89,7 +89,7 @@ export class Game {
     this._renderer.setPixelRatio(window.devicePixelRatio);
 
     // Stats
-    this._stats = new Stats();
+    this._stats = Stats();
     document.body.appendChild(this._stats.dom);
 
     // Scene

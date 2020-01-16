@@ -15,7 +15,7 @@
           "es2015.promise",
           "es5"
       ],
-      "declaration": true,
+      "declaration": false,
       "outDir": "./dist"
   },
   "files": [
