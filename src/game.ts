@@ -107,13 +107,20 @@ export class Game {
 
     // Light
     const color = 0xFFFFFF;
-    const intensity = 1.5;
+    const intensity = 1;
     const width = GRID_SIZE * INVADER_SPACING;
     const height = GRID_SIZE * INVADER_SPACING;
     const light = new THREE.PointLight(color, intensity);
-    light.position.set(0, 10, 10);
+    light.position.set(0, -20, 100);
     light.rotation.x = THREE.Math.degToRad(360);
     this.scene.add(light);
+
+    // const playerLight = new THREE.PointLight(color, intensity);
+    // const playerLight2 = new THREE.PointLight(color, intensity);
+    // const playerLight3 = new THREE.PointLight(color, intensity);
+    // light.position.set(0, -50, 10);
+    // this.scene.add(playerLight);
+
     if (DEBUG) {
       const helper = new THREE.PointLightHelper(light);
       light.add(helper);
@@ -121,7 +128,9 @@ export class Game {
     const ambientLight = new THREE.AmbientLight(0xffffff, 2);
     this.scene.add(ambientLight);
 
-    this._postProcessing();
+    // this._postProcessing();
+    // I know, get over it
+    window['ENABLE_POST_PROCESSING'] = () => this._postProcessing();
     this._preInit();
   }
 
@@ -153,14 +162,14 @@ export class Game {
     // Post processing
     const params = {
       exposure: 1.4,
-      bloomStrength: 1.5,
+      bloomStrength: 0.9,
       bloomThreshold: 0,
       bloomRadius: 0
     };
     const renderScene = new RenderPass(this.scene, this._camera);
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(innerWidth, innerHeight),
-      1.5,
+      1,
       0.4,
       0.85
     );
@@ -224,7 +233,8 @@ export class Game {
 
     // Render
     this._renderer.render(this.scene, this._camera);
-    this._composer.render();
+    if (this._composer)
+      this._composer.render();
 
     this._stats.update();
   }

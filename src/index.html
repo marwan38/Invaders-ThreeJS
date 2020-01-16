@@ -12,32 +12,15 @@
     height: 100%;
     display: block;
   }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 </style>
 
-<script id="vs" type="x-shader/x-vertex">
-  #version 300 es
-  
-  void main() {
-  
-    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-  
-  }
-  </script>
-<script id="fs" type="x-shader/x-fragment">
-  #version 300 es
-  
-  precision highp float;
-  precision highp int;
-  out vec4 out_FragColor;
-  
-  void main() {
-  
-    out_FragColor = vec4( 1.0 );
-  
-  }
-  </script>
-
 <body>
-
+  <button onclick="ENABLE_POST_PROCESSING()">Enable post processing</button>
   <canvas id="c"></canvas>
 </body>
