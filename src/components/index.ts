@@ -1,0 +1,9 @@
+export { BaseComponent } from './base';
+export { Model } from './model';
+export { Player } from './player';
+export { Movement } from './movement';
+export { InputComponent } from './input';
+export { Gun } from './gun';
+export { CanDie } from './canDie';
+export { Invader } from './invader';
+export { Stats } from './stats';
