@@ -8,3 +8,7 @@ This was the first thing made after finding out about ThreeJS. It is an un-optim
 - Mouse to drag camera around
 - Arrow keys for movement
 - Spacebar to shoot
+
+## TODO
+ - Add production build config for webpack and ts
+ - Add dev/prod context path for js files
